@@ -8,7 +8,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function MinutesToHours() {
-      const [amount, setAmount] = React.useState(0);
+      const [amount, setAmount] = React.useState();
       const [flipped, setFlipped] = React.useState(false);
       const onChange = (event) => {
         setAmount(event.target.value);
@@ -48,7 +48,44 @@
       );
     }
     function KmToMiles() {
-      return <h3>KM 2 M</h3>;
+      const [amount, setAmount] = React.useState();
+      const [flipped, setFlipped] = React.useState(false);
+      const onChange = (event) => {
+        setAmount(event.target.value);
+      };
+      const reset = () => setAmount(0);
+      const onFlip = () => {
+        reset();
+        setFlipped((current) => !current);
+      };
+      return (
+        <div>
+          <div>
+            <label htmlFor="kilometers">Kilometer</label>
+            <input
+              value={flipped ? Math.round(amount * 1.609) : amount}
+              id="kilometers"
+              placeholder="Kilometers"
+              type="number"
+              onChange={onChange}
+              disabled={flipped}
+            />
+          </div>
+          <div>
+            <label htmlFor="miles">Mile</label>
+            <input
+              value={flipped ? amount : amount / 1.609}
+              id="miles"
+              placeholder="Miles"
+              type="number"
+              onChange={onChange}
+              disabled={!flipped}
+            />
+          </div>
+          <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>{flipped ? "Turn back" : "Invert"}</button>
+        </div>
+      );
     }
     function App() {
       const [index, setIndex] = React.useState("xx");

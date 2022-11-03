@@ -1,1 +1,3 @@
-alert("hi");
+let amIStrong;
+
+console.log(amIStrong);

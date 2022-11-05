@@ -1,12 +1,8 @@
 const player = {
   name: "Lee",
-  points: 9999,
-  handsome: true,
-  fat: false,
+  sayHello: function (nameOfPerson) {
+    console.log("Hello " + nameOfPerson + " welcome!");
+  },
 };
 
-console.log(player);
-
-player.attackPoint = 98;
-
-console.log(player);
+player.sayHello("Kim");

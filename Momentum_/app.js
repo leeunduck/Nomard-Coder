@@ -1,9 +1,8 @@
-const player = {
-  name: "Lee",
-  point: function (helth, mana) {
-    console.log(helth + mana);
+const calculator = {
+  plus: function (a, b) {
+    return a + b;
+    console.log("Hello");
   },
 };
 
-player.point(9999, 1);
-console.log(player);
+const plusResult = calculator.plus(2, 2);

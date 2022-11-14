@@ -1,8 +1,3 @@
-const calculator = {
-  plus: function (a, b) {
-    return a + b;
-    console.log("Hello");
-  },
-};
+const title = document.getElementById("title");
 
-const plusResult = calculator.plus(2, 2);
+title.innerText = "Got you!";

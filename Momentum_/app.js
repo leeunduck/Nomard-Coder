@@ -1,3 +1,7 @@
-const title = document.getElementById("title");
+const title = document.querySelector(".hello1 h1");
 
-title.innerText = "Got you!";
+function handleTitleClick() {
+  title.style.color = "blue";
+}
+
+title.addEventListener("click", handleTitleClick);
